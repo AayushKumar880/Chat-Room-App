@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "498599716405",
+    "project_id": "thechatbotapp",
+    "storage_bucket": "thechatbotapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498599716405:android:be0cc4fef668e6198d337c",
+        "android_client_info": {
+          "package_name": "au.sirius.chatbotapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPwbz9_ISry9sDJ0iU8Ow4fGPGr8zgl7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
