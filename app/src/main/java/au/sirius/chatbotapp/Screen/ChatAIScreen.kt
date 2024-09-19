@@ -1,6 +1,7 @@
 package au.sirius.chatbotapp.Screen
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,7 +11,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Send
@@ -36,11 +40,12 @@ import au.sirius.chatbotapp.ViewModel.ChatAIViewModel
 
 @Composable
 fun ChatAiScreen(
-    AIviewModel : ChatAIViewModel = viewModel()
-){
+    AIviewModel: ChatAIViewModel = viewModel()
+) {
     var prompt by remember {
         mutableStateOf("")
     }
+    val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -49,9 +54,7 @@ fun ChatAiScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "AIChat Room",
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Bold
+            text = "AIChat Room", fontSize = 20.sp, fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.height(16.dp))
         Row(
@@ -72,9 +75,8 @@ fun ChatAiScreen(
 
             IconButton(onClick = {
                 AIviewModel.getResponse(prompt)
-                prompt=""
-            }
-            ) {
+                prompt = ""
+            }) {
                 Icon(imageVector = Icons.Default.Send, contentDescription = "Send")
             }
 
@@ -83,10 +85,10 @@ fun ChatAiScreen(
         Box(
             modifier = Modifier
                 .background(
-                    Color.Gray,
-                    shape = RoundedCornerShape(8.dp)
+                    Color.Gray, shape = RoundedCornerShape(8.dp)
                 )
                 .padding(8.dp)
+                .verticalScroll(scrollState)
         ) {
             Text(
                 text = AIviewModel.response.value,

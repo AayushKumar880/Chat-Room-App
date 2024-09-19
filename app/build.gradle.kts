@@ -26,6 +26,16 @@ android {
             buildConfig = true
         }
 
+        //splits
+        splits {
+            abi {
+                isEnable = true
+                reset()
+                include ("armeabi-v7a", "arm64-v8a")  // Add the ABIs your app supports
+                isUniversalApk = false  // Don’t create a universal APK
+            }
+        }
+
         //here are changes
         val properties = Properties()
         properties.load(project.rootProject.file("local.properties").inputStream())
@@ -37,7 +47,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
