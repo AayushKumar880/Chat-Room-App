@@ -10,6 +10,8 @@ import au.sirius.chatbotapp.data.Result
 import au.sirius.chatbotapp.data.User
 import au.sirius.chatbotapp.data.UserRepository
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
 class MessageViewModel : ViewModel() {
@@ -30,6 +32,9 @@ class MessageViewModel : ViewModel() {
     private val _currentUser = MutableLiveData<User>()
     val currentUser: LiveData<User> get() = _currentUser
 
+    private val _OnJoinEvent = MutableSharedFlow<String>()
+    val onJoinEvent = _OnJoinEvent.asSharedFlow()
+
     private fun loadCurrentUser() {
         viewModelScope.launch {
             when (val result = userRepository.getCurrentUser()) {
@@ -45,7 +50,6 @@ class MessageViewModel : ViewModel() {
     fun loadMessages() {
         viewModelScope.launch {
             if (_roomId != null) {
-
                 messageRepository.getChatMessages(_roomId.value.toString())
                     .collect { _messages.value = it }
             }
@@ -73,5 +77,13 @@ class MessageViewModel : ViewModel() {
     fun SetRoomId(roomId:String){
         _roomId.value=roomId
         loadMessages()
+    }
+
+    fun onJoinRoom(){
+        if(_roomId!=null){
+            viewModelScope.launch {
+                _roomId.value?.let { _OnJoinEvent.emit(it) }
+            }
+        }
     }
 }

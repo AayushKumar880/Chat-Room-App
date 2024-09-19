@@ -6,5 +6,4 @@ data class Message(
     val text: String = "",
     val timestamp: Long = System.currentTimeMillis(),
     val isSentByCurrentUser: Boolean = false
-
 )

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -20,8 +21,10 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
@@ -31,12 +34,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import au.sirius.chatbotapp.R
 import au.sirius.chatbotapp.ViewModel.MessageViewModel
 import au.sirius.chatbotapp.data.Message
+import kotlinx.coroutines.flow.collectLatest
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -46,7 +51,8 @@ import java.time.format.DateTimeFormatter
 @Composable
 fun ChatScreen(
     roomId: String,
-    messageViewModel: MessageViewModel = viewModel()
+    messageViewModel: MessageViewModel = viewModel(),
+    onVideoClicked: (String) -> Unit
 ) {
     val messages by messageViewModel.messages.observeAsState(emptyList())
     messageViewModel.SetRoomId(roomId)
@@ -55,16 +61,44 @@ fun ChatScreen(
         mutableStateOf("")
     }
 
+    LaunchedEffect(key1 = true) {
+        messageViewModel.onJoinEvent.collectLatest { name ->
+            onVideoClicked(roomId)
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
-
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = "Click to join the call",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold
+            )
+            IconButton(
+                onClick = {
+                    messageViewModel.onJoinRoom()
+                },
+            ) {
+                Icon(imageVector = Icons.Default.Call, contentDescription = "calling")
+            }
+        }
         LazyColumn(modifier = Modifier.weight(1f)) {
-            items(messages){message->
-                ChatRoomItem(message = message.copy(isSentByCurrentUser =
-                message.senderId == messageViewModel.currentUser.value?.email))
+            items(messages) { message ->
+                ChatRoomItem(
+                    message = message.copy(
+                        isSentByCurrentUser =
+                        message.senderId == messageViewModel.currentUser.value?.email
+                    )
+                )
             }
 
         }

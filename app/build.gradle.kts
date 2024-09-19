@@ -65,6 +65,12 @@ dependencies {
     implementation("androidx.compose.material:material:$compose_version")
     implementation("androidx.compose.ui:ui-tooling-preview:$compose_version")
 
+    //agora dependency
+    implementation ("com.github.AgoraIO-Community.VideoUIKit-Android:final:v4.0.1")
+
+    //gemini dependency
+    implementation("com.google.ai.client.generativeai:generativeai:0.7.0")
+
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

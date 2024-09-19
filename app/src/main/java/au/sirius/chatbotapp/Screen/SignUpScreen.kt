@@ -98,6 +98,7 @@ fun SignUpScreen(
                     password = ""
                     firstName = ""
                     lastName = ""
+                    onNavigateToLogin()
                 },
                 modifier = Modifier
                     .fillMaxWidth()

@@ -1,5 +1,6 @@
 package au.sirius.chatbotapp.Screen
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,6 +23,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -34,7 +36,9 @@ import au.sirius.chatbotapp.data.Room
 @Composable
 fun ChatRoomListScreen(
     roomViewModel: RoomViewModel = viewModel(),
-    onJoinClicked: (Room) -> Unit
+    onJoinClicked: (Room) -> Unit,
+    onChatAiClicked: () -> Unit,
+    onNewAccount:() -> Unit
 ) {
 
     val rooms by roomViewModel.rooms.observeAsState(emptyList())
@@ -52,16 +56,57 @@ fun ChatRoomListScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Text(
-            text = "Chat Rooms",
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Bold
-        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+            Text(
+                text = "Chat Rooms",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Text(
+                text = "New Account",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                fontStyle = FontStyle.Italic,
+                modifier = Modifier.clickable(
+                    onClick = {
+                        onNewAccount()
+                    }
+                )
+            )
+        }
+
         Spacer(modifier = Modifier.height(16.dp))
 
+        //GenAI default room
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = "AIChat Room",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Normal
+            )
+            OutlinedButton(
+                onClick = {
+                    onChatAiClicked()
+                }
+            ) {
+                Text("Join")
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
         LazyColumn {
-            items(rooms){room->
-                RoomItem(room = room,onJoinClicked = {onJoinClicked(room)})
+            items(rooms) { room ->
+                RoomItem(room = room, onJoinClicked = { onJoinClicked(room) })
             }
         }
 
@@ -116,7 +161,6 @@ fun ChatRoomListScreen(
 }
 
 
-
 @Composable
 fun RoomItem(room: Room, onJoinClicked: (Room) -> Unit) {
     Row(
@@ -143,5 +187,5 @@ fun RoomItem(room: Room, onJoinClicked: (Room) -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun ItemPreview() {
-    RoomItem(room = Room("id.com","Name")){}
+    RoomItem(room = Room("id.com", "Name")) {}
 }
