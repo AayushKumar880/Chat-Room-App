@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.AlertDialog
 import androidx.compose.material.Button
+import androidx.compose.material.Divider
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
@@ -22,6 +23,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -79,8 +81,7 @@ fun ChatRoomListScreen(
                 )
             )
         }
-
-        Spacer(modifier = Modifier.height(16.dp))
+        Divider(modifier = Modifier.height(2.dp))
 
         //GenAI default room
         Row(
@@ -92,7 +93,8 @@ fun ChatRoomListScreen(
             Text(
                 text = "AIChat Room",
                 fontSize = 16.sp,
-                fontWeight = FontWeight.Normal
+                fontWeight = FontWeight.Normal,
+                modifier = Modifier.align(Alignment.CenterVertically)
             )
             OutlinedButton(
                 onClick = {
@@ -172,7 +174,8 @@ fun RoomItem(room: Room, onJoinClicked: (Room) -> Unit) {
         Text(
             text = room.name,
             fontSize = 16.sp,
-            fontWeight = FontWeight.Normal
+            fontWeight = FontWeight.Normal,
+            modifier = Modifier.align(Alignment.CenterVertically)
         )
         OutlinedButton(
             onClick = {

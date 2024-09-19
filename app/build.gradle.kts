@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -19,6 +21,18 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildFeatures{
+            buildConfig = true
+        }
+
+        //here are changes
+        val properties = Properties()
+        properties.load(project.rootProject.file("local.properties").inputStream())
+        //gemini api key
+        buildConfigField("String","API_KEY","\"${properties.getProperty("API_KEY")}\"")
+        //agora api key
+        buildConfigField("String","apiId","\"${properties.getProperty("apiId")}\"")
     }
 
     buildTypes {
@@ -30,6 +44,8 @@ android {
             )
         }
     }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.OutlinedTextField
@@ -75,22 +76,27 @@ fun ChatScreen(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
+                .padding(bottom = 8.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "Click to join the call",
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold
+                text = "ChatRoom",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.align(Alignment.CenterVertically)
             )
             IconButton(
                 onClick = {
                     messageViewModel.onJoinRoom()
                 },
+                modifier = Modifier.align(Alignment.CenterVertically)
             ) {
                 Icon(imageVector = Icons.Default.Call, contentDescription = "calling")
             }
         }
+
+        Divider(modifier = Modifier.height(2.dp))
+
         LazyColumn(modifier = Modifier.weight(1f)) {
             items(messages) { message ->
                 ChatRoomItem(

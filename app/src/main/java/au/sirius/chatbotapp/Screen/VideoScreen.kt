@@ -10,6 +10,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.viewmodel.compose.viewModel
+import au.sirius.chatbotapp.BuildConfig
 import au.sirius.chatbotapp.ViewModel.VideoViewModel
 import io.agora.agorauikit_android.AgoraConnectionData
 import io.agora.agorauikit_android.AgoraVideoViewer
@@ -50,7 +51,7 @@ fun VideoScreen(
     if(videoViewModel.hasAudioPermission.value && videoViewModel.hasCameraPermission.value){
         AndroidView(factory = {
             AgoraVideoViewer(it, connectionData = AgoraConnectionData(
-                appId = "59926d0dc7764be4a6867305bd2bcadd"
+                appId = BuildConfig.apiId
             )).also {
                 it.join(roomId)
                 agoraView = it
