@@ -1,4 +1,4 @@
-# Chat Room App 📱💬
+# Therawin 📱💬
 
 A real-time, feature-rich **Chat Room Application** built using **Kotlin** and **Jetpack Compose**, integrated with **Firebase Authentication** and **Firestore** for seamless authentication and database operations. The app follows the **MVVM** (Model-View-ViewModel) architecture and provides modern features like AI-powered chat and video calling, making it both engaging and scalable.
 
