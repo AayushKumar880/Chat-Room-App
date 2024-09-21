@@ -12,6 +12,10 @@ This is a chat room application built using Kotlin and Jetpack Compose. The app 
 - AI Chatbot
 - Video calling
 
+## ScreenShots
+
+![Screenshots of app](ChatApp Snapshots/1.jpg)
+
 ## Installation
 
 ### Prerequisites
