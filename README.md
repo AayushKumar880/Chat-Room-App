@@ -1,6 +1,6 @@
 # Chat Room App
 
-This is a chat room application built using Kotlin and Jetpack Compose. The app uses Firebase Authentication for user sign-up and login, and Firestore for real-time database operations. The architecture follows the MVVM pattern and implements navigation components for seamless user experience.
+This is a chat room application built using Kotlin and Jetpack Compose. The app uses Firebase Authentication for user sign-up and login, and Firestore for real-time database operations. The architecture follows the MVVM pattern and implements navigation components for seamless user experience.It uses [Google Gemini API](https://ai.google.dev/gemini-api) for AI chatbot and [Agora.io API](https://www.agora.io/en/) for high quality video calling feature.
 
 ## Features
 
