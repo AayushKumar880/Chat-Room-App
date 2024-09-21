@@ -1,6 +1,6 @@
 # I'm Beside You Prototype 📱💬
 
-A real-time, feature-rich **Therawin App** built using **Kotlin** and **Jetpack Compose**, integrated with **Firebase Authentication** and **Firestore** for seamless authentication and database operations. The app follows the **MVVM** (Model-View-ViewModel) architecture and provides modern features like AI-powered chat and video calling, making it both engaging and scalable.
+A real-time, feature-rich **I'm Beside You App** built using **Kotlin** and **Jetpack Compose**, integrated with **Firebase Authentication** and **Firestore** for seamless authentication and database operations. The app follows the **MVVM** (Model-View-ViewModel) architecture and provides modern features like AI-powered chat and video calling, making it both engaging and scalable.
 
 ---
 
@@ -109,7 +109,7 @@ This project utilizes a variety of libraries and dependencies to enhance functio
 
 ## FrontEnd Libraries
 
-### 2. [Jetpack Compose](https://developer.android.com/jetpack/compose)
+### 1. [Jetpack Compose](https://developer.android.com/jetpack/compose)
 - **Description**: Jetpack Compose is a modern UI toolkit that simplifies UI development on Android.
 - **Reason for Use**: It allows for building dynamic user interfaces in a declarative way.
 - **Advantages**:
@@ -117,23 +117,7 @@ This project utilizes a variety of libraries and dependencies to enhance functio
   - **Less Boilerplate**: Eliminates the need for XML layouts, reducing the overall codebase.
   - **Integration**: Easily integrates with other Jetpack libraries, enhancing modularity.
 
-### 3. [Firebase Authentication](https://firebase.google.com/docs/auth)
-- **Description**: A service that provides easy-to-use authentication for applications.
-- **Reason for Use**: Firebase Authentication handles user sign-ups, logins, and secure sessions with minimal setup.
-- **Advantages**:
-  - **Multiple Sign-In Methods**: Supports email/password, social media logins, and more, providing flexibility.
-  - **Secure**: Offers built-in security features to protect user data.
-  - **Integration with Firestore**: Seamless integration with Firestore for user data management.
-
-### 4. [Firebase Firestore](https://firebase.google.com/docs/firestore)
-- **Description**: A NoSQL cloud database that allows for real-time data synchronization.
-- **Reason for Use**: Firestore enables efficient data storage and retrieval in real-time, essential for a chat application.
-- **Advantages**:
-  - **Real-Time Updates**: Automatically synchronizes data across clients, perfect for messaging apps.
-  - **Scalability**: Easily handles growing datasets and user loads.
-  - **Offline Support**: Provides built-in caching, allowing the app to function without an internet connection.
-
-### 5. [Navigation Component](https://developer.android.com/guide/navigation)
+### 2. [Navigation Component](https://developer.android.com/guide/navigation)
 - **Description**: A library for managing app navigation within Android.
 - **Reason for Use**: Simplifies the implementation of navigation patterns such as back stack management and deep linking.
 - **Advantages**:
@@ -142,8 +126,23 @@ This project utilizes a variety of libraries and dependencies to enhance functio
   - **Safe Args**: Enables type-safe arguments passing between destinations, reducing runtime errors.
 
 ## Backend Libraries
+### 1. [Firebase Authentication](https://firebase.google.com/docs/auth)
+- **Description**: A service that provides easy-to-use authentication for applications.
+- **Reason for Use**: Firebase Authentication handles user sign-ups, logins, and secure sessions with minimal setup.
+- **Advantages**:
+  - **Multiple Sign-In Methods**: Supports email/password, social media logins, and more, providing flexibility.
+  - **Secure**: Offers built-in security features to protect user data.
+  - **Integration with Firestore**: Seamless integration with Firestore for user data management.
 
-### 6. [Google Gemini API](https://ai.google.dev/gemini-api)
+### 2. [Firebase Firestore](https://firebase.google.com/docs/firestore)
+- **Description**: A NoSQL cloud database that allows for real-time data synchronization.
+- **Reason for Use**: Firestore enables efficient data storage and retrieval in real-time, essential for a chat application.
+- **Advantages**:
+  - **Real-Time Updates**: Automatically synchronizes data across clients, perfect for messaging apps.
+  - **Scalability**: Easily handles growing datasets and user loads.
+  - **Offline Support**: Provides built-in caching, allowing the app to function without an internet connection.
+
+### 3. [Google Gemini API](https://ai.google.dev/gemini-api)
 - **Description**: An advanced AI service that provides natural language processing capabilities.
 - **Reason for Use**: To incorporate AI-driven chat functionalities within the app.
 - **Advantages**:
@@ -151,7 +150,7 @@ This project utilizes a variety of libraries and dependencies to enhance functio
   - **Flexibility**: Can be customized for various conversational scenarios.
   - **State-of-the-Art Technology**: Leverages Google’s cutting-edge AI research for better performance.
 
-### 7. [Agora.io API](https://www.agora.io/en/)
+### 4. [Agora.io API](https://www.agora.io/en/)
 - **Description**: A real-time engagement platform for voice and video calling.
 - **Reason for Use**: To facilitate high-quality video calls between users in the chat room.
 - **Advantages**:
