@@ -14,16 +14,17 @@ This is a chat room application built using Kotlin and Jetpack Compose. The app 
 
 ## ScreenShots
 
-![Screenshots of app](Chat-Room-App/ChatApp Snapshots/1.jpg)
+![Screenshots of app](https://github.com/AayushKumar880/Chat-Room-App/blob/8b24020ed7c7de5a1ea6f4ca99a8de6426549975/ChatApp%20Snapshots/1.jpg)
+![Screenshots 2](https://github.com/AayushKumar880/Chat-Room-App/blob/2381d9c8509561071edc05daa783e27f3b0bec4b/ChatApp%20Snapshots/2.jpg)
 
 ## Installation
 
 ### Prerequisites
 
-- Android Studio 4.1 or higher
-- Android device or emulator running API level 21 or higher
-- Firebase account
-
+- Recommended [Android Studio Hedgehog | 2023.1.1 Patch 1 January 3, 2024](https://developer.android.com/studio/archive) or higher
+- Android device or emulator running API level 24 or higher (Recommended to use UpsideDownCake API 34 x86_64 Android 14.0 system image)
+- [Google Gemini API key](https://aistudio.google.com/app/apikey)
+- [Agora.io API key](https://www.agora.io/en/)
 ### Setup
 
 1. Clone the repository:
@@ -31,10 +32,12 @@ This is a chat room application built using Kotlin and Jetpack Compose. The app 
     git clone https://github.com/AayushKumar880/Chat-Room-App.git
     cd Chat-Room-App
     ```
+    Or
+   go to File->New->Project from Version Control and copy the link of the project [Link](https://github.com/AayushKumar880/Chat-Room-App.git).
 
-2. Open the project in Android Studio.
+3. Open the project in Android Studio.
 
-3. Set up Firebase:
+4. Set up Firebase:
     - Go to the [Firebase Console](https://console.firebase.google.com/).
     - Create a new project or use an existing one.
     - Add an Android app to your Firebase project.
@@ -42,9 +45,9 @@ This is a chat room application built using Kotlin and Jetpack Compose. The app 
     - Download the `google-services.json` file and place it in the `app` directory of your project.
     - Follow the instructions to add Firebase SDKs to your project.
 
-4. Sync the project with Gradle files.
+5. Sync the project with Gradle files.
 
-5. Run the app on your device or emulator.
+6. Run the app on your device or emulator.
 
 ## Architecture
 
