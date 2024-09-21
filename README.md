@@ -1,6 +1,15 @@
 # Therawin 📱💬
 
-A real-time, feature-rich **Chat Room Application** built using **Kotlin** and **Jetpack Compose**, integrated with **Firebase Authentication** and **Firestore** for seamless authentication and database operations. The app follows the **MVVM** (Model-View-ViewModel) architecture and provides modern features like AI-powered chat and video calling, making it both engaging and scalable.
+A real-time, feature-rich **Therawin App** built using **Kotlin** and **Jetpack Compose**, integrated with **Firebase Authentication** and **Firestore** for seamless authentication and database operations. The app follows the **MVVM** (Model-View-ViewModel) architecture and provides modern features like AI-powered chat and video calling, making it both engaging and scalable.
+
+---
+
+## 🧑‍💻 Developer Information 
+#### Aayush Kumar
+#### Bachelor of Technology in Mechanical Engineering
+#### IIT (ISM) Dhanbad
+
+---
 
 ## 🌟 Features
 - 🔐 **User Sign-Up and Login**: Securely authenticate users via **Firebase Authentication**.
@@ -19,6 +28,15 @@ Take a sneak peek of the app's UI:
 
 ![Screenshot 1](https://github.com/AayushKumar880/Chat-Room-App/blob/8b24020ed7c7de5a1ea6f4ca99a8de6426549975/ChatApp%20Snapshots/1.jpg)
 ![Screenshot 2](https://github.com/AayushKumar880/Chat-Room-App/blob/2381d9c8509561071edc05daa783e27f3b0bec4b/ChatApp%20Snapshots/2.jpg)
+
+---
+## 🚀 APKs for Different Architectures
+
+To ensure compatibility across devices, two APKs are provided for different architectures:
+- [`armabi-v7a.apk`](https://github.com/AayushKumar880/Therawin-Prototype/blob/83142422adacdd54c97970c5a5a094b64d314eba/Apk/app-armeabi-v7a-debug.apk) (For ARMv7-based devices).
+- [`arm64-v8a.apk`](https://github.com/AayushKumar880/Therawin-Prototype/blob/83142422adacdd54c97970c5a5a094b64d314eba/Apk/app-arm64-v8a-debug.apk) (For ARMv8-based devices).
+
+You can download and install the APK based on your device's architecture. Navigate to the `Apk` folder for manual installation.
 
 ---
 
@@ -79,25 +97,72 @@ The app follows the **MVVM (Model-View-ViewModel)** architecture pattern to ensu
 
 ## 📚 Dependencies and Libraries
 
-- [**Kotlin**](https://kotlinlang.org/): The primary language for Android app development, offering null safety and concise code.
-- [**Jetpack Compose**](https://developer.android.com/jetpack/compose): A modern toolkit for building native UI.
-- [**Firebase Authentication**](https://firebase.google.com/docs/auth): For secure user authentication.
-- [**Firebase Firestore**](https://firebase.google.com/docs/firestore): Real-time NoSQL database for storing chat messages and user data.
-- [**Navigation Component**](https://developer.android.com/guide/navigation): For handling in-app navigation seamlessly.
-- [**Google Gemini API**](https://ai.google.dev/gemini-api): Provides AI chatbot services.
-- [**Agora.io API**](https://www.agora.io/en/): For real-time video calling features.
+This project utilizes a variety of libraries and dependencies to enhance functionality, performance, and maintainability. Below is a detailed description of each dependency, along with the reasons for their selection and advantages over alternatives:
+
+### 1. [Kotlin](https://kotlinlang.org/)
+- **Description**: Kotlin is a modern programming language designed to be fully interoperable with Java.
+- **Reason for Use**: Kotlin simplifies Android development with concise syntax, null safety, and coroutines for asynchronous programming.
+- **Advantages**:
+  - **Conciseness**: Reduces boilerplate code significantly compared to Java.
+  - **Null Safety**: Helps prevent null pointer exceptions, a common source of runtime crashes.
+  - **Coroutines**: Simplifies asynchronous programming, making it easier to handle background tasks.
+
+## FrontEnd Libraries
+
+### 2. [Jetpack Compose](https://developer.android.com/jetpack/compose)
+- **Description**: Jetpack Compose is a modern UI toolkit that simplifies UI development on Android.
+- **Reason for Use**: It allows for building dynamic user interfaces in a declarative way.
+- **Advantages**:
+  - **Declarative Syntax**: Makes UI code more readable and easier to maintain.
+  - **Less Boilerplate**: Eliminates the need for XML layouts, reducing the overall codebase.
+  - **Integration**: Easily integrates with other Jetpack libraries, enhancing modularity.
+
+### 3. [Firebase Authentication](https://firebase.google.com/docs/auth)
+- **Description**: A service that provides easy-to-use authentication for applications.
+- **Reason for Use**: Firebase Authentication handles user sign-ups, logins, and secure sessions with minimal setup.
+- **Advantages**:
+  - **Multiple Sign-In Methods**: Supports email/password, social media logins, and more, providing flexibility.
+  - **Secure**: Offers built-in security features to protect user data.
+  - **Integration with Firestore**: Seamless integration with Firestore for user data management.
+
+### 4. [Firebase Firestore](https://firebase.google.com/docs/firestore)
+- **Description**: A NoSQL cloud database that allows for real-time data synchronization.
+- **Reason for Use**: Firestore enables efficient data storage and retrieval in real-time, essential for a chat application.
+- **Advantages**:
+  - **Real-Time Updates**: Automatically synchronizes data across clients, perfect for messaging apps.
+  - **Scalability**: Easily handles growing datasets and user loads.
+  - **Offline Support**: Provides built-in caching, allowing the app to function without an internet connection.
+
+### 5. [Navigation Component](https://developer.android.com/guide/navigation)
+- **Description**: A library for managing app navigation within Android.
+- **Reason for Use**: Simplifies the implementation of navigation patterns such as back stack management and deep linking.
+- **Advantages**:
+  - **Ease of Use**: Provides a simple API for handling navigation actions.
+  - **Visual Navigation Graph**: Allows developers to define navigation paths visually, improving clarity.
+  - **Safe Args**: Enables type-safe arguments passing between destinations, reducing runtime errors.
+
+## Backend Libraries
+
+### 6. [Google Gemini API](https://ai.google.dev/gemini-api)
+- **Description**: An advanced AI service that provides natural language processing capabilities.
+- **Reason for Use**: To incorporate AI-driven chat functionalities within the app.
+- **Advantages**:
+  - **Intelligent Responses**: Provides context-aware responses, enhancing user interaction.
+  - **Flexibility**: Can be customized for various conversational scenarios.
+  - **State-of-the-Art Technology**: Leverages Google’s cutting-edge AI research for better performance.
+
+### 7. [Agora.io API](https://www.agora.io/en/)
+- **Description**: A real-time engagement platform for voice and video calling.
+- **Reason for Use**: To facilitate high-quality video calls between users in the chat room.
+- **Advantages**:
+  - **Low Latency**: Ensures smooth real-time communication, critical for video chats.
+  - **Cross-Platform Support**: Works seamlessly across different devices and platforms.
+  - **Scalability**: Easily accommodates a growing number of users without compromising quality.
 
 ---
 
-## 🚀 APKs for Different Architectures
+By leveraging these libraries and dependencies, Therawin Prototype is built to be robust, scalable, and user-friendly, ensuring an enjoyable experience for all users.
 
-To ensure compatibility across devices, two APKs are provided for different architectures:
-- [`armabi-v7a.apk`](https://github.com/AayushKumar880/Chat-Room-App/releases/download/v1.0/armabi-v7a.apk) (For ARMv7-based devices).
-- [`arm64-v8a.apk`](https://github.com/AayushKumar880/Chat-Room-App/releases/download/v1.0/arm64-v8a.apk) (For ARMv8-based devices).
-
-You can download and install the APK based on your device's architecture. Navigate to the `/apks` folder for manual installation.
-
----
 
 ## 🤝 Contributing
 
@@ -116,11 +181,7 @@ We will review your PR and merge it once approved. For any major changes, please
 
 For any questions or feedback, feel free to reach out to me:
 
-- Email: [aayushiitism@gmail.com](mailto:aayushiitism@gmail.com)
+- Email: [aayushiitism@gmail.com](mailto:aayushiitism@gmail.com) or [22je0012@iitism.ac.in](22je0012@iitism.ac.in)
 - GitHub: [@AayushKumar880](https://github.com/AayushKumar880)
 
 ---
-
-## 📝 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
