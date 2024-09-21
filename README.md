@@ -160,7 +160,7 @@ This project utilizes a variety of libraries and dependencies to enhance functio
 
 ---
 
-By leveraging these libraries and dependencies, Therawin Prototype is built to be robust, scalable, and user-friendly, ensuring an enjoyable experience for all users.
+By leveraging these libraries and dependencies, this Prototype is built to be robust, scalable, and user-friendly, ensuring an enjoyable experience for all users.
 
 
 ## 🤝 Contributing
@@ -171,8 +171,6 @@ We welcome contributions! If you want to contribute to the project, please follo
 3. Commit your changes (`git commit -am 'Add a new feature'`).
 4. Push the branch (`git push origin feature-branch`).
 5. Open a Pull Request.
-
-We will review your PR and merge it once approved. For any major changes, please open an issue to discuss beforehand.
 
 ---
 
