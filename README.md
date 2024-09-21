@@ -5,10 +5,12 @@ This is a chat room application built using Kotlin and Jetpack Compose. The app 
 ## Features
 
 - User Sign-Up and Login using Firebase Authentication
-- Create and Join Chat Rooms
+- Create and Join Chat Rooms 
 - Real-Time Messaging using Firestore
 - Navigation using Jetpack Navigation Components
-- MVVM Architecture
+- MVVM Clean Code Architecture
+- AI Chatbot
+- Video calling
 
 ## Installation
 
