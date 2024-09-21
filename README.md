@@ -14,7 +14,7 @@ This is a chat room application built using Kotlin and Jetpack Compose. The app 
 
 ## ScreenShots
 
-![Screenshots of app](ChatApp Snapshots/1.jpg)
+![Screenshots of app](Chat-Room-App/ChatApp Snapshots/1.jpg)
 
 ## Installation
 
