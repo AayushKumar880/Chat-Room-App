@@ -4,7 +4,7 @@ A real-time, feature-rich **I'm Beside You App** built using **Kotlin** and **Je
 
 ---
 
-## 🧑‍💻 Developer Information 
+## 🧑‍💻 Developer's Information 
 #### Aayush Kumar
 #### Bachelor of Technology in Mechanical Engineering
 #### IIT (ISM) Dhanbad
@@ -33,14 +33,18 @@ Take a sneak peek of the app's UI:
 ## 🚀 APKs for Different Architectures
 
 To ensure compatibility across devices, two APKs are provided for different architectures:
-- [`armabi-v7a.apk`](https://github.com/AayushKumar880/Therawin-Prototype/blob/83142422adacdd54c97970c5a5a094b64d314eba/Apk/app-armeabi-v7a-debug.apk) (For ARMv7-based devices).
-- [`arm64-v8a.apk`](https://github.com/AayushKumar880/Therawin-Prototype/blob/83142422adacdd54c97970c5a5a094b64d314eba/Apk/app-arm64-v8a-debug.apk) (For ARMv8-based devices).
+- [`armabi-v7a.apk`](https://github.com/AayushKumar880/Therawin-Prototype/blob/83142422adacdd54c97970c5a5a094b64d314eba/Apk/app-armeabi-v7a-debug.apk) (For ARMv7-based devices, use it for 32-bit Android Devices).
+- [`arm64-v8a.apk`](https://github.com/AayushKumar880/Therawin-Prototype/blob/83142422adacdd54c97970c5a5a094b64d314eba/Apk/app-arm64-v8a-debug.apk) (For ARMv8-based devices, use it for 64-bit Android Devices).
 
 You can download and install the APK based on your device's architecture. Navigate to the `Apk` folder for manual installation.
+
+NOTE: These apks are for android devices only.
 
 ---
 
 ## 🛠️ Installation
+
+*You can directly install apk in your android device for testing the app without any setup 😁 or follow the steps to set up in android studio.*
 
 ### Prerequisites
 
@@ -54,23 +58,27 @@ To get the project running locally, ensure you have the following:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/AayushKumar880/Chat-Room-App.git
-    cd Chat-Room-App
+    git clone https://github.com/AayushKumar880/Im-Beside-You
+    cd Im-Beside-You
     ```
 
-    Alternatively, open **Android Studio**, go to `File -> New -> Project from Version Control`, and paste the repository link: [Chat Room App GitHub](https://github.com/AayushKumar880/Chat-Room-App.git).
+    Alternatively, open **Android Studio**, go to `File -> New -> Project from Version Control`, and paste the repository link: [I'm Beside You Prototype GitHub](https://github.com/AayushKumar880/Chat-Room-App.git).
 
 2. **Set Up Firebase**:
     - Navigate to the [Firebase Console](https://console.firebase.google.com/) and create a new project (or use an existing one).
     - Add an Android app to your Firebase project with your app’s package name.
     - Download the `google-services.json` file and place it in the `app` directory.
     - Follow the [Firebase setup instructions](https://firebase.google.com/docs/android/setup) to add Firebase SDKs.
+  
+    NOTE: You can skip this step as for testing the app, my Firebase account already added to it.
 
 3. **Set Up Google Gemini API**:
-    - Get your API key from [Google Gemini API](https://aistudio.google.com/app/apikey) and add it to your project’s `local.properties` and ensure to it as API_KEY.
+    - Get your API key from [Google Gemini API](https://aistudio.google.com/app/apikey) and add it to your project’s `local.properties` and ensure to declare it as `API_KEY`.
+    - Example: API_KEY = XYZ123
 
 4. **Set Up Agora.io API**:
-    - Obtain your API key from [Agora.io API](https://www.agora.io/en/) and include it in the project’s `local.properties` for enabling video calls and ensure to declare it as apiId.
+    - Obtain your API key from [Agora.io API](https://www.agora.io/en/) and include it in the project’s `local.properties` for enabling video calls and ensure to declare it as `apiId`.
+    - Example: apikey = XYZ123
 
 5. **Sync Gradle Files**:
     - Ensure that all Gradle dependencies are resolved. Go to `File -> Sync Project with Gradle Files` to ensure all libraries are installed.
@@ -97,7 +105,7 @@ The app follows the **MVVM (Model-View-ViewModel)** architecture pattern to ensu
 
 ## 📚 Dependencies and Libraries
 
-This project utilizes a variety of libraries and dependencies to enhance functionality, performance, and maintainability. Below is a detailed description of each dependency, along with the reasons for their selection and advantages over alternatives:
+This project utilizes a variety of libraries and dependencies to enhance functionality, performance, and maintainability. Below is a detailed description of each dependency, along with the reasons for their selection:
 
 ### 1. [Kotlin](https://kotlinlang.org/)
 - **Description**: Kotlin is a modern programming language designed to be fully interoperable with Java.
@@ -111,7 +119,7 @@ This project utilizes a variety of libraries and dependencies to enhance functio
 
 ### 1. [Jetpack Compose](https://developer.android.com/jetpack/compose)
 - **Description**: Jetpack Compose is a modern UI toolkit that simplifies UI development on Android.
-- **Reason for Use**: It allows for building dynamic user interfaces in a declarative way.
+- **Reason for Use**:  Compose makes UI development more intuitive by removing the need for manual UI updates. You focus on the what (what the UI should look like), not the how (how to update the UI).
 - **Advantages**:
   - **Declarative Syntax**: Makes UI code more readable and easier to maintain.
   - **Less Boilerplate**: Eliminates the need for XML layouts, reducing the overall codebase.
@@ -119,7 +127,7 @@ This project utilizes a variety of libraries and dependencies to enhance functio
 
 ### 2. [Navigation Component](https://developer.android.com/guide/navigation)
 - **Description**: A library for managing app navigation within Android.
-- **Reason for Use**: Simplifies the implementation of navigation patterns such as back stack management and deep linking.
+- **Reason for Use**: It simplifies the implementation of navigation patterns such as back stack management and deep linking.
 - **Advantages**:
   - **Ease of Use**: Provides a simple API for handling navigation actions.
   - **Visual Navigation Graph**: Allows developers to define navigation paths visually, improving clarity.
@@ -127,7 +135,7 @@ This project utilizes a variety of libraries and dependencies to enhance functio
 
 ## Backend Libraries
 ### 1. [Firebase Authentication](https://firebase.google.com/docs/auth)
-- **Description**: A service that provides easy-to-use authentication for applications.
+- **Description**: Firebase provides easy-to-use authentication for applications.
 - **Reason for Use**: Firebase Authentication handles user sign-ups, logins, and secure sessions with minimal setup.
 - **Advantages**:
   - **Multiple Sign-In Methods**: Supports email/password, social media logins, and more, providing flexibility.
@@ -135,7 +143,7 @@ This project utilizes a variety of libraries and dependencies to enhance functio
   - **Integration with Firestore**: Seamless integration with Firestore for user data management.
 
 ### 2. [Firebase Firestore](https://firebase.google.com/docs/firestore)
-- **Description**: A NoSQL cloud database that allows for real-time data synchronization.
+- **Description**: It follows NoSQL cloud database that allows for real-time data synchronization.
 - **Reason for Use**: Firestore enables efficient data storage and retrieval in real-time, essential for a chat application.
 - **Advantages**:
   - **Real-Time Updates**: Automatically synchronizes data across clients, perfect for messaging apps.
@@ -151,7 +159,7 @@ This project utilizes a variety of libraries and dependencies to enhance functio
   - **State-of-the-Art Technology**: Leverages Google’s cutting-edge AI research for better performance.
 
 ### 4. [Agora.io API](https://www.agora.io/en/)
-- **Description**: A real-time engagement platform for voice and video calling.
+- **Description**: Agora.io provides real-time engagement platform for voice and video calling.
 - **Reason for Use**: To facilitate high-quality video calls between users in the chat room.
 - **Advantages**:
   - **Low Latency**: Ensures smooth real-time communication, critical for video chats.
